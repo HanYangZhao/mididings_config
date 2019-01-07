@@ -23,9 +23,9 @@ config(
     # in_ports is all devices sending midi out via usb cable into raspberry pi for routing.
     # the first item in each set of parenthesis is arbitrary and can be named whatever you want. Second item is like an address and is specific to what [client]:[port] values are listed when you plug your gear into Pi and run aplaymidi -l command.
     in_ports = [
-        #('keystep','Arturia Keystep:0'),
+        ('keystep','Arturia KeyStep 32:0'),
         ('beatstep', 'Arturia BeatStep Pro:0'),
-        ('mpk', 'MPK261:0'),
+        #('mpk', 'MPK261:0'),
     ],
     # out_ports is all devices receiving midi data via usb cable outputted from raspberry pi.
     out_ports = [
@@ -67,7 +67,7 @@ run(
             #Volca Fm needs a midi cc 41 msg for velocity
         ],
         # with mpc correctly configured for multi-timbral, incoming midi passes thru to mpc midi out which we duplicate eight times here and filter/send out via mio midi interface to the blofeld midi in
-        'mpk': [
+        'keystep': [
             ChannelFilter(1) >> Output('CH345',1),
             ChannelFilter(2) >> Output('CH345',2),
             ChannelFilter(3) >> Output('CH345',3),
