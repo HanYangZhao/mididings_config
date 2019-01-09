@@ -29,7 +29,7 @@ config(
     ],
     # out_ports is all devices receiving midi data via usb cable outputted from raspberry pi.
     out_ports = [
-        ('CH345', 'CH345:0'),
+        ('CH345', 'USB MIDI Interface:0'),
         ('beatstep2', 'Arturia BeatStep Pro:0')
     ]
 )
