@@ -1,0 +1,2 @@
+ACTION=="add",ATTRS{idVendor}=="1c75", ATTRS{idProduct}=="0287", RUN+="/home/pi/mididings_config/mount_midi.sh" 
+ACTION=="remove",ATTRS{idVendor}=="1c75", ATTRS{idProduct}=="0287", RUN+="/home/pi/mididings_config/unmount_midi.sh" 
